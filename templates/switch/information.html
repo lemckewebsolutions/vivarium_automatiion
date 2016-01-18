@@ -1,0 +1,47 @@
+<div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-info fa-fw"></i> Informatie
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered table-hover">
+                <tr>
+                    <td>Index</td>
+                    <td>{{ switch.index }}</td>
+                </tr>
+                <tr>
+                    <td>Naam</td>
+                    <td>{{ switch.name }}</td>
+                </tr>
+                <tr>
+                    <td>Altijd aan</td>
+                    <td>
+                        {% if switch.timeTable.alwaysOn %}
+                        Ja
+                        {% else %}
+                        Nee
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Autopilot</td>
+                    <td>
+                        {% if user is not null %}
+                            <input class="switch js-autoPilot"
+                                   name="{{ switch.index }}"
+                                   type="checkbox"
+                                   {% if switch.timeTable.autopilot %} checked {% endif %}
+                            >
+                        {% else %}
+                            {% if switch.timeTable.autopilot %}
+                                Aan
+                            {% else %}
+                                Uit
+                            {% endif %}
+                        {% endif %}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

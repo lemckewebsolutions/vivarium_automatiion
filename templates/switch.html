@@ -1,0 +1,15 @@
+{% include 'layout/header.html' %}
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">{{ switch.name }}</h1>
+        </div>
+        <div class="row">
+            {% include 'switch/information.html' %}
+            {% if not switch.timeTable.alwaysOn %}
+                {% include 'switch/timetable.html' %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% include 'layout/footer.html' %}

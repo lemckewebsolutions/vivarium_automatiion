@@ -1,0 +1,9 @@
+{
+  "salt": "",
+  "database": {
+    "host": "localhost",
+    "username": "",
+    "password": "",
+    "database": ""
+  }
+}
